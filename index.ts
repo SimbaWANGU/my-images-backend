@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { Request, Response } from 'express'
+import type { Request, Response } from 'express'
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
