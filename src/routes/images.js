@@ -10,3 +10,8 @@ imagesRouter.post('/create', (req, res) => {
         .then(() => { })
         .catch(() => { });
 });
+imagesRouter.get('/:email', (req, res) => {
+    (0, images_1.getImages)(req, res)
+        .then(() => { })
+        .catch(() => { });
+});
