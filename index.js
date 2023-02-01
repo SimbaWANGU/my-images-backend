@@ -31,5 +31,3 @@ app.use('/image', images_1.imagesRouter);
 app.listen(port, () => {
     console.log(`Express server listening at http://localhost:${port}`);
 });
-// !simberella
-// !YSSkVNL41hFYSNHP
