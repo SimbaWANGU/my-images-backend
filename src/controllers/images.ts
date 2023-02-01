@@ -44,4 +44,14 @@ const createImage = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-export { createImage }
+const getImages = async (req: Request, res: Response): Promise<void> => {
+  const email = req.params.email
+  const images = await ImageModel.find({
+    email
+  })
+  res.status(200).json({
+    images
+  })
+}
+
+export { createImage, getImages }

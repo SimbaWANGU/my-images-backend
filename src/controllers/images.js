@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createImage = void 0;
+exports.getImages = exports.createImage = void 0;
 const ImageApiCall_1 = require("../api/ImageApiCall");
 const Images_1 = require("../model/Images");
 const createImage = async (req, res) => {
@@ -47,3 +47,14 @@ const createImage = async (req, res) => {
     }
 };
 exports.createImage = createImage;
+const getImages = async (req, res) => {
+    const email = req.params.email;
+    const images = await Images_1.ImageModel.find({
+        email
+    });
+    console.log(images);
+    res.status(200).json({
+        images
+    });
+};
+exports.getImages = getImages;
