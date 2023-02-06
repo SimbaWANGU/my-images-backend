@@ -18,7 +18,8 @@ const createImage = async (req: Request, res: Response): Promise<void> => {
           await ImageModel.create({
             email,
             prompt,
-            images: data
+            images: data,
+            createdAt: new Date()
           })
             .then(() => {
               res.status(201).json({
