@@ -15,6 +15,10 @@ const ImageSchema = new mongoose.Schema({
     type: Array,
     require: true,
     length: 10
+  },
+  createdAt: {
+    type: Date,
+    expires: 7200
   }
 })
 
