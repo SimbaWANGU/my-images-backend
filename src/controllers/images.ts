@@ -22,7 +22,8 @@ const createImage = async (req: Request, res: Response): Promise<void> => {
           })
             .then(() => {
               res.status(201).json({
-                success: 'Images Generated'
+                success: 'Images Generated',
+                images: data
               })
             })
             .catch(() => {
@@ -31,7 +32,6 @@ const createImage = async (req: Request, res: Response): Promise<void> => {
               })
             })
         } else {
-          console.log(data)
           res.status(201).json({
             success: 'Images Generated',
             images: data
@@ -39,7 +39,10 @@ const createImage = async (req: Request, res: Response): Promise<void> => {
         }
       })
       .catch((err: any) => {
-        console.log(err)
+        res.status(500).json({
+          error: 'An error occurred',
+          message: err.message
+        })
       })
   }
 }
