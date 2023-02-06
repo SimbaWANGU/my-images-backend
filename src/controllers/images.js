@@ -20,11 +20,13 @@ const createImage = async (req, res) => {
                 await Images_1.ImageModel.create({
                     email,
                     prompt,
-                    images: data
+                    images: data,
+                    createdAt: new Date()
                 })
                     .then(() => {
                     res.status(201).json({
-                        success: 'Images Generated'
+                        success: 'Images Generated',
+                        images: data
                     });
                 })
                     .catch(() => {
@@ -34,7 +36,6 @@ const createImage = async (req, res) => {
                 });
             }
             else {
-                console.log(data);
                 res.status(201).json({
                     success: 'Images Generated',
                     images: data
@@ -42,7 +43,10 @@ const createImage = async (req, res) => {
             }
         })
             .catch((err) => {
-            console.log(err);
+            res.status(500).json({
+                error: 'An error occurred',
+                message: err.message
+            });
         });
     }
 };
@@ -52,7 +56,6 @@ const getImages = async (req, res) => {
     const images = await Images_1.ImageModel.find({
         email
     });
-    console.log(images);
     res.status(200).json({
         images
     });
