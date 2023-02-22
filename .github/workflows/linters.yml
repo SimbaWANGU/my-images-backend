@@ -20,7 +20,7 @@ jobs:
           npm install --save-dev eslint@^8.0.1 eslint-config-next@^13.1.6
           [ -f .eslintrc.json ]
       - name: ESLint Report
-        run: npm lint
+        run: npm run lint
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-18.04
