@@ -17,7 +17,7 @@ jobs:
           node-version: "12.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint@^8.0.1 eslint-config-next@^13.1.6 next@^13.1.6 @types/react-dom @types/react
+          npm install --save-dev eslint@^8.0.1 eslint-config-next@^13.1.6 next@^13.1.6 react react-dom
           [ -f .eslintrc.json ]
       - name: ESLint Report
         run: npm run lint
