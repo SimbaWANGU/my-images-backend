@@ -17,10 +17,10 @@ jobs:
           node-version: "12.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint-plugin-react@latest eslint-config-standard-with-typescript@latest @typescript-eslint/eslint-plugin@^5.0.0 eslint@^8.0.1 eslint-plugin-import@^2.25.2 eslint-plugin-n@^15.0.0 eslint-plugin-promise@^6.0.0 typescript@*
+          npm install --save-dev eslint@^8.0.1 eslint-config-next@^13.1.6
           [ -f .eslintrc.json ]
       - name: ESLint Report
-        run: npx eslint .
+        run: npm lint
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-18.04
