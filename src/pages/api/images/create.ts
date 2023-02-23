@@ -4,6 +4,8 @@ import { corsMiddleware } from "../middleware/corsMiddleware"
 
 interface Data {}
 
+interface Data {}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   corsMiddleware(req, res, async () => {
     if (req.method === 'POST') {
