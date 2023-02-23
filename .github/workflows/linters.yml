@@ -24,7 +24,7 @@ jobs:
       - name: Lint TypeScript files
         run: npm run lint
 
-nodechecker:
+  nodechecker:
     name: node_modules checker
     runs-on: ubuntu-18.04
     steps:
