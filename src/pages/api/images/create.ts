@@ -1,4 +1,4 @@
-import { imagesControllerPost } from '@/pages/controllers/imagesController'
+import { imagesControllerPost } from "@/controllers/imagesController"
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 interface Data {}
