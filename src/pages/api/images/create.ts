@@ -1,10 +1,15 @@
 import { imagesControllerPost } from "@/controllers/imagesController"
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { corsMiddleware } from "../middleware/corsMiddleware"
+
+interface Data {}
 
 interface Data {}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  if (req.method === 'POST') {
-    await imagesControllerPost(req, res)
-  }
+  corsMiddleware(req, res, async () => {
+    if (req.method === 'POST') {
+      await imagesControllerPost(req, res)
+    }
+  })
 }
