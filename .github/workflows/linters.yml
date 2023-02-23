@@ -24,9 +24,6 @@ jobs:
       - name: Lint TypeScript files
         run: npm run lint
 
-      - name: Lint Next.js files
-        run: npm run lint:next
-
       - name: Ensure node_modules not pushed
         run: |
           if [ -d "node_modules" ]; then
