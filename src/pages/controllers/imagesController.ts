@@ -1,5 +1,5 @@
-import { createImageFromOpenAPI } from "@/api/OpenAIAPI"
 import { NextApiRequest, NextApiResponse } from "next"
+import { createImageFromOpenAPI } from "../openai/OpenAIAPI"
 
 const imagesControllerPost = async (req: NextApiRequest, res: NextApiResponse) => {
   const prompt = req.body.prompt
