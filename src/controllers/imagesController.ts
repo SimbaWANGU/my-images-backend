@@ -13,7 +13,7 @@ const imagesControllerPost = async (req: NextApiRequest, res: NextApiResponse) =
       const data = await createImageFromOpenAPI(prompt, Number(numImages))
       res.status(200).json({
         prompt,
-        images: data
+        images: data.images
       })
     } catch (err) {
       res.status(500).json({
